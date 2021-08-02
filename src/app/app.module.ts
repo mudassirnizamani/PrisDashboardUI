@@ -4,13 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// PrimeNgModules
+import {RippleModule} from 'primeng/ripple';
+
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
