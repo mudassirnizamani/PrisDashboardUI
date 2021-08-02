@@ -4,9 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// PrimeNgModules
+// PrimeNgModules - Mudasir Ali
 import {RippleModule} from 'primeng/ripple';
 
+// Custom Modules - Mudasir Ali
+import { BlocksModule } from './blocks/blocks.module';
+import { SharedModule } from 'primeng/api';
+import { CoreModule } from './core/core.module';
+import { FeaturesModule } from './features/features.module';
+
+
+const CustomModules = [
+  BlocksModule,
+  SharedModule,
+  CoreModule,
+  FeaturesModule
+]
+
+const PrimeNgModules = [
+  RippleModule
+]
 
 @NgModule({
   declarations: [
@@ -15,7 +32,8 @@ import {RippleModule} from 'primeng/ripple';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RippleModule
+    CustomModules,
+    PrimeNgModules
   ],
   providers: [],
   bootstrap: [AppComponent]
