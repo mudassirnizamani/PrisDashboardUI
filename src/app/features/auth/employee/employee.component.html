@@ -1,0 +1,184 @@
+<div class="login__container">
+  <div class="login__wrap">
+    <div class="login__head">
+      <a class="login__logo" href="#"
+        ><img class="login__pic" src="img/logo-white.svg" alt=""
+      /></a>
+    </div>
+    <form
+      class="login__form"
+      [formGroup]="Form"
+      (ngSubmit)="onSubmit()"
+      #form="ngForm"
+    >
+      <div class="login__body shadow-md hover:shadow-lg">
+        <div class="login__title login__title_sm">Employee Sign Up</div>
+        <div class="p-field flex flex-col my-2">
+          <label
+            class="font-black"
+            [class.text-red-500]="
+              (UserName.invalid && UserName.touched) ||
+              (UserName.invalid && form.submitted)
+            "
+            >Username</label
+          >
+          <input
+            formControlName="userName"
+            class="
+              my-1
+              appearance-none
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            pInputText
+            [class.border-red-500]="
+              (UserName.invalid && UserName.touched) ||
+              (UserName.invalid && form.submitted)
+            "
+          />
+          <div
+            *ngIf="
+              (UserName.invalid && UserName.touched) ||
+              (UserName.invalid && form.submitted)
+            "
+            [class.text-red-500]="
+              (UserName.invalid && UserName.touched) ||
+              (UserName.invalid && form.submitted)
+            "
+          >
+            <small class="font-normal" *ngIf="UserName.hasError('required')"
+              >Plz enter your username</small
+            >
+            <small class="font-normal" *ngIf="UserName.errors.minlength"
+              >Username must have 2 characters</small
+            >
+            <small class="font-normal" *ngIf="UserName.errors.maxlength"
+              >Username should only contain 20 characters</small
+            >
+          </div>
+        </div>
+        <div class="p-field flex flex-col my-3">
+          <label
+            class="font-black"
+            [class.text-red-500]="
+              (FirstName.invalid && FirstName.touched) ||
+              (FirstName.invalid && form.submitted)
+            "
+            >FirstName</label
+          >
+          <input
+            formControlName="firstName"
+            class="
+              my-1
+              appearance-none
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            pInputText
+            [class.border-red-500]="
+              (FirstName.invalid && FirstName.touched) ||
+              (FirstName.invalid && form.submitted)
+            "
+          />
+          <div
+            *ngIf="
+              (FirstName.invalid && FirstName.touched) ||
+              (FirstName.invalid && form.submitted)
+            "
+            [class.text-red-500]="
+              (FirstName.invalid && FirstName.touched) ||
+              (FirstName.invalid && form.submitted)
+            "
+          >
+            <small class="font-normal" *ngIf="FirstName.hasError('required')"
+              >Plz enter your firstname</small
+            >
+            <small class="font-normal" *ngIf="FirstName.errors.minlength"
+              >Firstname must have 2 characters</small
+            >
+            <small class="font-normal" *ngIf="FirstName.errors.maxlength"
+              >Firstname should only contain 20 characters</small
+            >
+          </div>
+        </div>
+        <div class="p-field flex flex-col my-3">
+          <label
+            class="font-black"
+            [class.text-red-500]="
+              (LastName.invalid && LastName.touched) ||
+              (LastName.invalid && form.submitted)
+            "
+            >LastName</label
+          >
+          <input
+            formControlName="lastName"
+            class="
+              my-1
+              appearance-none
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            pInputText
+            [class.border-red-500]="
+              (LastName.invalid && LastName.touched) ||
+              (LastName.invalid && form.submitted)
+            "
+          />
+          <div
+            *ngIf="
+              (LastName.invalid && LastName.touched) ||
+              (LastName.invalid && form.submitted)
+            "
+            [class.text-red-500]="
+              (LastName.invalid && LastName.touched) ||
+              (LastName.invalid && form.submitted)
+            "
+          >
+            <small class="font-normal" *ngIf="LastName.hasError('required')"
+              >Plz enter your Lastname</small
+            >
+            <small class="font-normal" *ngIf="LastName.errors.minlength"
+              >Lastname must have 2 characters</small
+            >
+            <small class="font-normal" *ngIf="LastName.errors.maxlength"
+              >Lastname should only contain 20 characters</small
+            >
+          </div>
+        </div>
+        <button
+          type="submit"
+          [loading]="false"
+          label="Signup"
+          icon="pi pi-user-plus"
+          pButton
+          pRipple
+          [loading]="false"
+          class="p-button-info p-button-raised rounded-full w-full"
+        ></button>
+
+        <ul class="login__links">
+          <li><a class="login__link" href="#">Can’t login?</a></li>
+          <li><a class="login__link" href="#">Sign up for new user?</a></li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>
